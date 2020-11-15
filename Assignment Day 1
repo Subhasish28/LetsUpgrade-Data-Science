@@ -1,1 +1,107 @@
+Questions 1:
+Given the following jumbled word, OBANWRI guess the correct English word.
+A. RANIBOW
+B. RAINBOW
+C. BOWRANI
+D. ROBWANI
+
+Answer 1:
+B. RAINBOW
+
+Questions 2:
+Write a program which prints “LETS UPGRADE”. (Please note that you have to
+print in ALL CAPS as given)
+
+Answer 2:
+print (“LETS UPGRADE”)
+
+Questions 3:
+Write a program that takes cost price and selling price as input and displays whether the transaction is a
+Profit or a Loss or Neither.
+INPUT FORMAT
+The first line contains the cost price.
+The second line contains the selling price.
+OUTPUT FORMAT
+Print "Profit" if the transaction is a profit or "Loss" if it is a loss. If it is neither
+profit nor loss, print "Neither". (You must not have quotes in your output)
+
+NOTE:
+Please stick to the input and output format. Don't add anything extra like
+'Enter cost price', 'Enter selling price', etc.
+
+Answer 3:
+def Profit(costPrice, sellingPrice) : 
+  
+    profit = (sellingPrice - costPrice) 
+  
+    return profit 
+  
+# Function to calculate Loss. 
+def Loss(costPrice, sellingPrice) : 
+  
+    Loss = (costPrice - sellingPrice) 
+  
+    return Loss 
+  
+# Driver code 
+if __name__ == "__main__" : 
+  
+    costPrice, sellingPrice = 1500, 2000
+  
+    if sellingPrice == costPrice : 
+        print("No profit nor Loss") 
+  
+    elif sellingPrice > costPrice : 
+        print(Profit(costPrice,  
+                     sellingPrice), "Profit") 
+  
+    else : 
+        print(Loss(costPrice,  
+                   sellingPrice), "Loss") 
+ 
+Questions 4:
+Write a program that takes an amount in Indian Rupees as input. You need to find its equivalent
+in Euro and display it. Assume 1 Euro equals Rs. 80.
+Please note that you are expected to stick to the given input and output
+format as in sample test cases. Please don't add any extra lines such as
+'Enter a number', etc.
+Your program should take only one number as input and display the output.
+
+Answer 4:
+import requests 
+  
+class Currency_convertor: 
+    # empty dict to store the conversion rates 
+    rates = {}  
+    def __init__(self, url): 
+        data = requests.get(url).json() 
+  
+        # Extracting only the rates from the json data 
+        self.rates = data["rates"]  
+  
+    # function to do a simple cross multiplication between  
+    # the amount and the conversion rates 
+    def convert(self, from_currency, to_currency, amount): 
+        initial_amount = amount 
+        if from_currency != 'EUR' : 
+            amount = amount / self.rates[from_currency] 
+  
+        # limiting the precision to 2 decimal places 
+        amount = round(amount * self.rates[to_currency], 2) 
+        print('{} {} = {} {}'.format(initial_amount, from_currency, amount, to_currency)) 
+  
+# Driver code 
+if __name__ == "__main__": 
+  
+    # YOUR_ACCESS_KEY = 'GET YOUR ACCESS KEY FROM fixer.io' 
+    url = str.__add__('http://data.fixer.io/api/latest?access_key=', YOUR_ACCESS_KEY)   
+    c = Currency_convertor(url) 
+    from_country = input("From Country: ") 
+    to_country = input("TO Country: ") 
+    amount = int(input("Amount: ")) 
+  
+    c.convert(from_country, to_country, amount) 
+
+
+
 
