@@ -1,1 +1,111 @@
 
+Questions 1:
+Create a numpy array starting from 2 till 50 with a stepsize of 3.
+
+Answer:
+import numpy as np
+array=np.arange(30,71,2)
+print("Array of all the even integers from 30 to 70")
+print(array) 
+
+Questions 2:
+Accept two lists of 5 elements each from the user.
+Convert them to numpy arrays. Concatenate these arrays and print it. Also sort these arrays and print it.
+
+Answer:
+a = np.array([0, 1, 2, 3])
+a
+
+a.ndim
+
+a.shape
+
+b = np.array([[0, 1, 2], [3, 4, 5]])    # 2 x 3 array
+b
+
+
+b.ndim
+
+b.shape
+
+len(b)     # returns the size of the first dimension
+
+
+c = np.array([[[1], [2]], [[3], [4]]])
+c
+
+Questions 3:
+Write a code snippet to find the dimensions of a ndarray and its size.
+
+Answer:
+# Python program to demonstrate 
+# basic array characteristics
+import numpy as np
+ 
+# Creating array object
+arr = np.array( [[ 1, 2, 3],
+                 [ 4, 2, 5]] )
+ 
+# Printing type of arr object
+print("Array is of type: ", type(arr))
+ 
+# Printing array dimensions (axes)
+print("No. of dimensions: ", arr.ndim)
+ 
+# Printing shape of array
+print("Shape of array: ", arr.shape)
+ 
+# Printing size (total number of elements) of array
+print("Size of array: ", arr.size)
+ 
+# Printing type of elements in array
+print("Array stores elements of type: ", arr.dtype)
+
+
+Questions 4:
+How to convert a 1D array into a 2D array? Demonstrate with the help of a code snippet
+Hint: np.newaxis, np.expand_dims
+
+Answer:
+array2d[0][0] = 1 array2d[0][1] =2 array2d[0][2] =3
+.
+.
+.
+array2d[9][0] = 28 array2d[9][1] =29 array2d[9][2] =30
+
+Questions 5:
+Consider two square numpy arrays. Stack them vertically and horizontally.
+Hint: Use vstack(), hstack()
+
+Answer:
+import numpy as np 
+  
+a = np.array([[1, 2], 
+              [3, 4]]) 
+  
+b = np.array([[5, 6], 
+              [7, 8]]) 
+  
+# vertical stacking 
+print("Vertical stacking:\n", np.vstack((a, b))) 
+  
+# horizontal stacking 
+print("\nHorizontal stacking:\n", np.hstack((a, b))) 
+  
+c = [5, 6] 
+  
+# stacking columns 
+print("\nColumn stacking:\n", np.column_stack((a, c))) 
+  
+# concatenation method  
+print("\nConcatenating to 2nd axis:\n", np.concatenate((a, b), 1)) 
+
+
+Questions 6:
+How to get unique items and counts of unique items?
+
+Answer:
+a_list = [1, 1, 2, 2, 3]
+a_set = set(a_list)
+number_of_unique_values = len(a_set)
+print(number_of_unique_values)
